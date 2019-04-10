@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 export default class Task extends Component {
     render() {
         return (
-            <li>{this.props.task.text}</li>
+            <li className="list-group-item disabled">{this.props.task.text}</li>
         );
     }
 }
