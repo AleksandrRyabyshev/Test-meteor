@@ -69,11 +69,11 @@ class App extends Component {
             <div className="container">
                 <div className="row h-100">  {/*justify-content-md-center*/}
                     {/*<header>*/}
-                        <div className="col-lg-11 col-md-10 col-sm-12">
+                        <div className="col-lg-10 col-md-10 col-sm-12">
                             <h1 className="text-center font-italic">Todo List ({this.props.incompleteCount})</h1>
                         </div>
 
-                        <div className="col-lg-1 col-md-2 col-sm-12 text-center">
+                        <div className="col-lg-2 col-md-2 col-sm-12 text-center">
                             <AccountsUIWrapper />
                         </div>
                     {/*</header>*/}
