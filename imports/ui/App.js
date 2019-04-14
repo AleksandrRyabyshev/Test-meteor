@@ -67,12 +67,23 @@ class App extends Component {
     render() {
         return (
             <div className="container">
-                <div className="row justify-content-md-center">
-                    <header>
-                        <h1>Todo List ({this.props.incompleteCount})</h1>
+                <div className="row h-100">  {/*justify-content-md-center*/}
+                    {/*<header>*/}
+                        <div className="col-lg-11 col-md-10 col-sm-12">
+                            <h1 className="text-center font-italic">Todo List ({this.props.incompleteCount})</h1>
+                        </div>
 
+                        <div className="col-lg-1 col-md-2 col-sm-12 text-center">
+                            <AccountsUIWrapper />
+                        </div>
+                    {/*</header>*/}
+                </div>
+
+                <div className="row">
+                    <div className="col-lg-11 col-md-10 text-center">
                         <label className="hide-completed">
                             <input
+                                className="checkbox_Task"
                                 type="checkbox"
                                 readOnly
                                 checked={this.state.hideCompleted}
@@ -80,11 +91,13 @@ class App extends Component {
                             />
                             Hide Completed Tasks
                         </label>
+                    </div>
+                </div>
 
-                        <AccountsUIWrapper/>
-
+                <div className="row">
+                    <div className="col-lg-11 col-md-10 text-center">
                         { this.props.currentUser ?
-                            <form className="new-task" onSubmit={this.handleSubmit.bind(this)} >
+                            <form className="form-group" onSubmit={this.handleSubmit.bind(this)} >
                                 <input
                                     type="text"
                                     ref="textInput"
@@ -92,13 +105,19 @@ class App extends Component {
                                 />
                             </form> : ''
                         }
-                    </header>
+                    </div>
                 </div>
+                    {/*/header>*/}
+                {/*</div>*/}
 
-                <div className="row justify-content-md-center">
-                    <ul className="">
-                        {this.renderTasks()}
-                    </ul>
+                <div className="row">
+                    <div className=".col-xl-11 col-lg-11 col-md-10 d-flex justify-content-center">
+                        <div className="w-75">
+                        <ul className="list-group">
+                            {this.renderTasks()}
+                        </ul>
+                        </div>
+                    </div>
                 </div>
 
             </div>
